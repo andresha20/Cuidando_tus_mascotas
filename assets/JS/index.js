@@ -25,44 +25,73 @@ invalidFeedbackDate.style.display="none"
 invalidFeedbackHour.style.display="none"
 invalidFeedbackService.style.display="none"
 
-function Validate(){
-    'use strict'
-  
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.needs-validation')
-  
-    // Loop over them and prevent submission
-    Array.from(forms).forEach(form => {
-      form.addEventListener('submit', event => {
-        if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()   
-            alert("Debes llenar todos los campos correctamente!")
-        }
-        form.classList.add('was-validated')
-        setInterval(()=>{
-            form.classList.add('was-validated')
-            if (!userName.value) {
-                invalidFeedbackName.style.display="block"
-                console.log("54") 
-            }
-            else{
-                invalidFeedbackName.style.display="none"
-                console.log("53")
-            }    
-            
-            if (!userLastName.value) {
-                invalidFeedbackName.style.display="block"
-                
-            }
-            else{
-                invalidFeedbackName.style.display="none"
-            }
-            console.log("55")       
-        },2000)
-        
-      }, false)
-    })
-  }
+const btnSubmit=document.getElementById("btn_submit")
+let validName=false
+let validLastName=false
 
-Validate()
+// const validID=false
+// const validPhone=false
+// const validDate=false
+// const validHour=false
+// const validService=false
+var constantValidate
+function mostrar() {
+    constantValidate=setInterval(()=>{
+        userName.addEventListener('keyup',(event)=>{
+            console.log(event.target.value)
+            userName.innerHTML=event.target.vale
+        })
+        if(userName.value.length<10){
+            userName.classList.add('is-invalid')
+        }
+        else{
+            userName.classList.remove('is-invalid')
+            userName.classList.add('is-valid')
+            validName=true
+        }
+    
+        userLastName.addEventListener('keyup',(event)=>{
+            console.log(event.target.value)
+            userLastName.innerHTML=event.target.vale
+        })
+        if(userLastName.value.length<10){
+            userLastName.classList.add('is-invalid')
+        }
+        else{
+            userLastName.classList.remove('is-invalid')
+            userLastName.classList.add('is-valid')
+            validLastName=true
+        }
+
+        if(userEmail.value.length>1){
+            if(userEmail.value.includes("@") && (userEmail.value.includes(".com") || userEmail.value.includes(".co") || userEmail.value.includes(".net") || userEmail.value.includes(".gg"))){
+                console.log("@@")
+                userEmail.classList.remove('is-invalid')
+                userEmail.classList.add('is-valid')
+            }
+            else{
+                userEmail.classList.add('is-invalid')
+            }
+        }
+        else{
+            userEmail.classList.add('is-invalid')
+        }
+        console.log("a")
+    },500)
+}
+
+
+ 
+
+btnSubmit.addEventListener('click',(event)=>{
+    event.preventDefault()
+   
+    
+    if(validName===true && validLastName===true){
+        clearInterval(constantValidate)
+    }
+    else{
+        alert("Fill correctly all the input!")
+        mostrar()
+    }
+})
