@@ -39,17 +39,27 @@ function Validate(){
             event.stopPropagation()   
             
         }
-        if (userName.value=="a") {
-            console.log("aaa")
-            
-        }
-        else {
+        form.classList.add('was-validated')
+        setInterval(()=>{
             form.classList.add('was-validated')
-            setTimeout(() => {
-                form.classList.remove('was-validated')
-            }, 3000);
+            if (!userName.value) {
+                invalidFeedbackName.style.display="block"
+                console.log("54") 
+            }
+            else{
+                invalidFeedbackName.style.display="none"
+                console.log("53")
+            }    
             
-        }
+            if (!userLastName.value) {
+                invalidFeedbackName.style.display="block"
+                
+            }
+            else{
+                invalidFeedbackName.style.display="none"
+            }
+            console.log("55")       
+        },2000)
         
       }, false)
     })
