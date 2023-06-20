@@ -37,7 +37,7 @@ function Validate(){
         if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()   
-            
+            alert("Debes llenar todos los campos correctamente!")
         }
         form.classList.add('was-validated')
         setInterval(()=>{
