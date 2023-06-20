@@ -11,80 +11,87 @@
 </head>
 <body>
     <section class="container">
-        <div class="row m-5">
+        <div class="row m-1">
             <div class="col-12 col-md-6 p-4">
-                <form>
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">
-                                    <i class="bi bi-person-badge"></i>
-                                </span>
-                                <input type="text" class="form-control" placeholder="Name" id="userName">
-                            </div>
+                <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                      <label for="validationCustom01" class="form-label">First name</label>
+                      <input type="text" class="form-control" id="userName" placeholder="Alejandro..." required>
+                      <div class="invalidFeedback">
+                        Write your name!
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="validationCustom02" class="form-label">Last name</label>
+                      <input type="text" class="form-control" id="userLastName" placeholder="Naranjo..." required>
+                      <div class="invalid-feedback">
+                        Write your last name!
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <label for="validationCustomUsername" class="form-label">Email</label>
+                      <div class="input-group has-validation">
+                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                        <input type="email" class="form-control" id="userEmail" aria-describedby="inputGroupPrepend" placeholder="********@****.***" required>
+                        <div class="invalid-feedback">
+                          Please write a valid email.
                         </div>
-                        <div class="col-12 col-md-6">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">
-                                    <i class="bi bi-person-badge-fill"></i>
-                                </span>
-                                <input type="text" class="form-control" placeholder="Last Name" id="userLastName">
-                            </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="validationCustom03" class="form-label">ID</label>
+                      <input type="number" class="form-control" id="userID" placeholder="Identification" required>
+                      <div class="invalid-feedback">
+                        Please provide a valid ID.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom03" class="form-label">Phone</label>
+                        <input type="number" class="form-control" id="userPhone" placeholder="Phone Number" required>
+                        <div class="invalid-feedback">
+                          Please provide a valid Phone.
+                        </div>
+                      </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom03" class="form-label">Phone</label>
+                        <input type="date" class="form-control" id="userDate" required>
+                        <div class="invalid-feedback">
+                          Please select a date.
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">
-                                    <i class="bi bi-envelope-at"></i>
-                                </span>
-                                <input type="email" id="userEmail" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
-                              </div>
-                        </div>
+                    <div class="col-md-6">
+                      <label for="validationCustom05" class="form-label">Hour</label>
+                      <select class="form-select" id="userHour" required>
+                        <option selected disabled value="">Select an hour...</option>
+                        <option value="1">7:15 am</option>
+                        <option value="2">8:15 am</option>
+                        <option value="3">9:15 am</option>
+                        <option value="4">10:15 am</option>
+                        <option value="5">11:15 am</option>
+                        <option value="6">12:15 am</option>
+                        <option value="7">13:15 am</option>
+                        <option value="8">14:15 am</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Please select an hour.
+                      </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">
-                                    <i class="bi bi-telephone-fill"></i>
-                                </span>
-                                <input type="number" id="userPhone" class="form-control" placeholder="Phone Number" aria-label="Username" aria-describedby="basic-addon1">
-                            </div>
+                    <div class="col-md-12">
+                        <label for="validationCustom04" class="form-label">Service</label>
+                        <select class="form-select" id="userService" required>
+                          <option selected disabled value="">Choose...</option>
+                          <option value="1">Full Clean</option>
+                          <option value="2">Stylish Cut</option>
+                          <option value="3">Puntica Cut</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Please select a service.
                         </div>
-                        <div class="col-12 col-md-6">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">
-                                    <i class="bi bi-credit-card"></i>
-                                </span>
-                                <input type="number" id="userID" class="form-control" placeholder="ID" aria-label="Username" aria-describedby="basic-addon1">
-                            </div>
-                        </div>
+                      </div>
+                    <div class="col-12">
+                      <button class="btn btn-primary w-100" type="submit" id="btn_submit">Submit form</button>
                     </div>
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">
-                                    <i class="bi bi-calendar-event-fill"></i>
-                                </span>
-                                <input type="date" id="date" class="form-control" placeholder="fecha" aria-label="Username" aria-describedby="basic-addon1">
-                            </div>
-    
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon1">
-                                    <i class="bi bi-clock-fill"></i>
-                                </span>
-                                <select id="hour" class="form-select" aria-label="Default select example">
-                                    <option selected value="7:15 am">7:15 am</option>
-                                    <option value="8:15 am">8:15 am</option>
-                                    <option value="9:15 am">9:15 am</option>
-                                  </select>
-                              </div>
-                        </div>
-                    </div>
-                    <input type="submit" class=" btn btn-dark w-100" value="Submit" id="btn_submit">
-                </form>
+                  </form>
             </div>
             <div class="col-12 col-md-6"></div>
         </div>
