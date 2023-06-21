@@ -142,6 +142,11 @@ function mostrar() {
 
 btnSubmit.addEventListener('click',(event)=>{
     event.preventDefault()
+<<<<<<< HEAD
+    if(validName===true && validLastName===true){
+        clearInterval(constantValidate)
+        return submitCallbackFn(event);
+=======
    
     
     if(validName===true && validLastName===true && validEmail===true && validID===true && validPhone===true && validDate===true && validHour===true && validService===true){
@@ -155,6 +160,7 @@ btnSubmit.addEventListener('click',(event)=>{
         // userHour.textContent=""
         // userService.textContent=""
         location.reload()
+>>>>>>> da965f233596cb6ad89ceb0e2d8d5de55115b289
     }
     else{
         alert("Fill correctly all the input!")

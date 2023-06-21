@@ -11,18 +11,18 @@
 </head>
 <body>
     <section class="container">
-        <div class="row m-1">
+        <div class="row m-1" id="form">
             <div class="col-12 col-md-6 p-4">
                 <form class="row g-3 needs-validation" novalidate>
                     <div class="col-md-6">
-                      <label for="validationCustom01" class="form-label">First name</label>
+                      <label for="validationCustom01" class="form-label">Nombres</label>
                       <input type="text" class="form-control" id="userName" placeholder="Alejandro..." required>
                       <div id="invalidFeedbackName">
                         Write your name!
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <label for="validationCustom02" class="form-label">Last name</label>
+                      <label for="validationCustom02" class="form-label">Apellidos</label>
                       <input type="text" class="form-control" id="userLastName" placeholder="Naranjo..." required>
                       <div id="invalidFeedbackLastName">
                         Write your last name!
@@ -40,28 +40,28 @@
                       
                     </div>
                     <div class="col-md-6">
-                      <label for="validationCustom03" class="form-label">ID</label>
+                      <label for="validationCustom03" class="form-label">Documento</label>
                       <input type="number" class="form-control" id="userID" placeholder="Identification" required>
                       <div id="invalidFeedbackID">
                         Please provide a valid ID.
                       </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="validationCustom03" class="form-label">Phone</label>
+                        <label for="validationCustom03" class="form-label">Celular</label>
                         <input type="number" class="form-control" id="userPhone" placeholder="Phone Number" required>
                         <div id="invalidFeedbackPhone">
                           Please provide a valid Phone.
                         </div>
                       </div>
                     <div class="col-md-6">
-                        <label for="validationCustom03" class="form-label">Date</label>
+                        <label for="validationCustom03" class="form-label">Fecha</label>
                         <input type="date" class="form-control" id="userDate" required>
                         <div id="invalidFeedbackDate">
                           Please select a date.
                         </div>
                     </div>
                     <div class="col-md-6">
-                      <label for="validationCustom05" class="form-label">Hour</label>
+                      <label for="validationCustom05" class="form-label">Hora</label>
                       <select class="form-select" id="userHour" required>
                         <option selected disabled value="">Select an hour...</option>
                         <option value="1">7:15 am</option>
@@ -78,26 +78,29 @@
                       </div>
                     </div>
                     <div class="col-md-12">
-                        <label for="validationCustom04" class="form-label">Service</label>
+                        <label for="validationCustom04" class="form-label">Servicio</label>
                         <select class="form-select" id="userService" required>
-                          <option selected disabled value="">Choose...</option>
-                          <option value="1">Full Clean</option>
-                          <option value="2">Stylish Cut</option>
-                          <option value="3">Puntica Cut</option>
+                          <option selected disabled value="">Elige el servicio...</option>
+                          <option value="1">Limpieza total</option>
+                          <option value="2">Corte estiludo</option>
+                          <option value="3">Corte de puntica</option>
                         </select>
                         <div id="invalidFeedbackService">
                           Please select a service.
                         </div>
                       </div>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit" id="btn_submit">Submit form</button>
+                      <button class="btn btn-primary w-100" type="submit" id="btn_submit">Agendar servicio</button>
                     </div>
                   </form>
             </div>
             <div class="col-12 col-md-6"></div>
         </div>
     </section>
-    <script src="assets/JS/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/JS/index.js"></script>
+    <script src="./assets/JS/controller.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
