@@ -1,0 +1,61 @@
+/* Estilos del navbar */
+.nabvarstyle{
+    background-color: #AAD3DC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.stylelogo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo{
+    width: 60px;
+    height: 60px;
+    margin-right: 40px;
+}
+.navbartex{
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbartex a{
+    text-decoration: none;   
+    color: black; 
+}
+
+.navbartex a h3:hover{
+    color: #A35B33; 
+    font-size: 30px;
+    transition: 1s all;
+}
+/* PARTE RESPONSIVE***************************************************************************** */
+@media only screen and (max-width:800px) {
+    .navbartex{
+        width: 65%;
+    }
+}
+/* PARTE RESPONSIVE***************************************************************************** */
+@media only screen and (max-width:730px) {
+    /*imagen*/
+    .logo{
+        margin-right: 25px;
+    }
+}
+/* PARTE RESPONSIVE***************************************************************************** */
+@media only screen and (max-width:500px) {
+    .navbartex h3{
+        font-size: 18px;
+    }
+
+}
