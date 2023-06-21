@@ -15,7 +15,7 @@
 
 }
 
-.logo{
+.logo1{
     width: 60px;
     height: 60px;
     margin-right: 40px;
@@ -48,12 +48,16 @@
 /* PARTE RESPONSIVE***************************************************************************** */
 @media only screen and (max-width:730px) {
     /*imagen*/
-    .logo{
+    .logo1{
         margin-right: 25px;
     }
 }
 /* PARTE RESPONSIVE***************************************************************************** */
 @media only screen and (max-width:500px) {
+    .logo1{
+        width: 25%;
+        height: 20%;
+    }
     .navbartex h3{
         font-size: 18px;
     }
