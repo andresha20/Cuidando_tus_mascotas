@@ -44,12 +44,6 @@ function mostrar() {
         if(userName.value.length<10){
             userName.classList.add('is-invalid')
         }
-<<<<<<< HEAD
-        form.classList.add('was-validated')
-      }, false)
-    })
-  })()
-=======
         else{
             userName.classList.remove('is-invalid')
             userName.classList.add('is-valid')
@@ -91,14 +85,12 @@ function mostrar() {
 
 btnSubmit.addEventListener('click',(event)=>{
     event.preventDefault()
-   
-    
     if(validName===true && validLastName===true){
         clearInterval(constantValidate)
+        return submitCallbackFn(event);
     }
     else{
         alert("Fill correctly all the input!")
         mostrar()
     }
 })
->>>>>>> 488ec00fe15bf9b18172c711f6e2b22bf471ce94

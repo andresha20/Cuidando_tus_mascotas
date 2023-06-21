@@ -1,58 +1,99 @@
 let appointments = [];
+let isEditing = false;
 
-const fields = ["userName", "userLastName", "userEmail", "userPhone", "userID", "userDate", "userHour"];
+const fields = ["userName", "userLastName", "userEmail", "userPhone", "userID", "userDate", "userHour", "userService"];
 appointments = JSON.parse(Cookies?.get("appointments") || "[]") || [];
+
+window.onload = () => {
+    const queryString = window.location.search;
+    const urlString = new URLSearchParams(queryString);
+    let serviceId = urlString.get("id");
+    let targetDiv = document.getElementById("form");
+    if (serviceId) {
+        let indexOfAppointment = appointments.findIndex(el => el.userID == serviceId);
+        if (indexOfAppointment !== -1) {
+            let editingText = document.createElement("h4");
+            editingText.textContent = `Editando documento #${appointments[indexOfAppointment]["userID"]}`;
+            targetDiv.appendChild(editingText);
+            isEditing = true;
+            Object.keys(appointments[indexOfAppointment]).map(key => {
+                document.getElementById(key).value = appointments[indexOfAppointment][key];
+            })
+        }
+    }
+}
 
 const editData = (field, appointment) => {
     let fieldValue = document.getElementById(field)?.value || "";
-    console.log(fieldValue)
     if (fieldValue.length == 0) return null;
-    console.log(fieldValue, field)
     appointment[field] = fieldValue;
     document.getElementById(field).value = "";
     return appointment;
 }
 
+const submitCallbackFn = (e) => {
+    let appointment = {};
+    let error = false;
+    fields.forEach(field => {
+        appointment = editData(field, appointment);
+        if (!appointment) {
+            error = true;
+            return false;
+        };
+    });
+    if (error) {
+        Swal.fire(
+            'Campos vacíos',
+            'No puedes guardar citas con contenido vacío.',
+            'error'
+        )
+    } else {
+        if (isEditing) {
+            Swal.fire(
+                `¡Cita con documento ${appointment["userID"]} editada!`,
+                'Hemos actualizado tu cita satisfactoriamente.',
+                'success'
+            )
+            let indexOfAppointment = appointments.findIndex(el => el.userID == serviceId);
+            appointments[indexOfAppointment] = appointment;
+        } else {
+            Swal.fire(
+                '¡Cita agendada!',
+                'Hemos agendado tu cita satisfactoriamente.',
+                'success'
+            )
+            appointments.push(appointment);
+        }
+        Cookies.set('appointments', JSON.stringify(appointments), { expires: 365 });
+    }
+}
+
 const handleSubmit = (e) => {
     switch (e.target.id) {
-        case "btn_submit":
-            e.preventDefault();
-            let appointment = {};
-            let error = false;
-            fields.forEach(field => {
-                appointment = editData(field, appointment);
-                if (!appointment) {
-                    error = true;
-                    return false;
-                };
-            });
-            if (error) {
-                Swal.fire(
-                    'Campos vacíos',
-                    'No puedes guardar citas con contenido vacío.',
-                    'error'
-                )
-            } else {
-                Swal.fire(
-                    '¡Cita agendada!',
-                    'Hemos agendado tu cita satisfactoriamente.',
-                    'success'
-                )
-                appointments.push(appointment);
-                Cookies.set('appointments', JSON.stringify(appointments), { expires: 365 });
-
-            }
-            break;
         case "editButton":
         case "deleteButton":
-            let appointmentDoc = e.target.name;
-            let indexOfAppointment = appointments.findIndex(el => el.document == appointmentDoc);
+            let serviceId = e.target.name;
             if (e.target.id == "editButton") {
-                window.location = "index.html/#form";
-                Object.keys(appointments[indexOfAppointment]).map(key => {
-                    document.getElementById(key).value = appointments[indexOfAppointment][key];
-                })
+                window.location = `index.html?id=${serviceId}#form`;
             } else {
+                Swal.fire({
+                    title: '¿Seguro que deseas eliminar esta cita?',
+                    text: "Será eliminada de manera permanente.",
+                    type: 'warning',
+                    showCancelButton: true,
+                    cancelButtonText: 'Cancelar',
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sí, eliminala'
+                    }).then(() => {
+                        Swal.fire(
+                        'Cita eliminada',
+                        'Cita eliminada satisfactoriamente.',
+                        'success'
+                        );
+                    }
+                )
+                let indexOfAppointment = appointments.findIndex(el => el.userID == serviceId);
                 appointments.splice(indexOfAppointment, 1);
             }
             break;
@@ -97,6 +138,22 @@ const getHourLabel = (value) => {
     return label;
 }
 
+const getServiceLabel = (value) => {
+    let label = "Limpieza total";
+    switch (parseInt(value)) {
+        case 2:
+            label = "Corte estiludo";
+            break;
+        case 3:
+            label = "Corte de puntica";
+            break;
+            
+        default:
+            break;
+    }
+    return label;
+}
+
 const getAppointments = () => {
     let cookieExists = Cookies.get("appointments");
     if (cookieExists) {
@@ -104,7 +161,7 @@ const getAppointments = () => {
     }
     appointments.map((appointment, i) => {
         let appointmentDiv = document.createElement("div");
-        appointmentDiv.setAttribute("id", appointment?.document);
+        appointmentDiv.setAttribute("id", appointment?.userID);
         let names = document.createElement("h1");
         let email = document.createElement("h3");
         let phone = document.createElement("p");
@@ -116,14 +173,14 @@ const getAppointments = () => {
         deleteButton.innerHTML = "Eliminar";
         editButton.setAttribute("id", "editButton")
         deleteButton.setAttribute("id", "deleteButton")
-        editButton.setAttribute("name", `${appointment?.document}`);
-        deleteButton.setAttribute("name", `${appointment?.document}`);
+        editButton.setAttribute("name", `${appointment?.userID}`);
+        deleteButton.setAttribute("name", `${appointment?.userID}`);
         buttonsDiv.appendChild(editButton);
         buttonsDiv.appendChild(deleteButton);
         names.textContent = `${appointment?.userName} ${appointment?.userLastName}`;
         email.textContent = `${appointment?.userEmail}`;
         phone.textContent = `${appointment?.userPhone}`;
-        details.textContent = `${appointment?.userDate} | ${getHourLabel(appointment?.userHour)}`
+        details.textContent = `${appointment?.userDate} | ${getHourLabel(appointment?.userHour)} | ${getServiceLabel(appointment?.userService)}`
         appointmentDiv.appendChild(names);
         appointmentDiv.appendChild(email);
         appointmentDiv.appendChild(phone);
