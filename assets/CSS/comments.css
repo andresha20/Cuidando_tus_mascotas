@@ -34,5 +34,37 @@
 @media only screen and (max-width:800px) {
     .imgcomment{
         width: 60%;
+        padding: 1rem 0;
+    }
+
+    .bordercomment {
+        height: 25rem;
+    }
+
+    .comments-c{
+        height: 10rem;
+    }
+
+    .stars{
+        display: none;
+    }
+}
+
+@media only screen and (max-width:476px) {
+    .imgcomment{
+        width: 60%;
+        padding: 1rem 0;
+    }
+
+    .bordercomment {
+        height: 30rem;
+    }
+
+    .comments-c{
+        height: 12rem;
+    }
+
+    .stars{
+        display: none;
     }
 }
