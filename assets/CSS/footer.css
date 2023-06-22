@@ -10,14 +10,12 @@
 .logo{
     width: 50px;
     height: 50px;
-    border: solid 1px red;
 }
 .logo_text{
     width: 12%; 
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    border: solid 1px red;
 }
 .icons{
     display: flex;
