@@ -3,6 +3,14 @@
     margin: 0;
     padding: 0;
 }
+main {
+    min-height: 100vh;
+}
+
+.main-appointments {
+    margin-top: 20vh;
+}
+
 .card {
     background-color:  #F7F5F5;
     height: 35rem;
