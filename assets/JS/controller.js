@@ -1,5 +1,5 @@
 let appointments = JSON.parse(Cookies?.get("appointments") || "[]") || [];
-let images = ["baño.jpeg", "farma.jpeg", "boquita.jpeg"]
+let images = ["baño.jpeg", "farma.jpeg", "boquita.jpeg"];
 
 // Highlight active page in menu
 
