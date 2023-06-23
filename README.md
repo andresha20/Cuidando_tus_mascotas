@@ -4,7 +4,7 @@ NARICITAS FELICES es una plataforma ficticia que fue desarrollada como prueba fi
 
 - Dilbani Enriquez: SCRUM Master
 - Andrés Henao: UI Designer y CRUD operations
-- Alejandro Vanegas: UI Dessigner y validación de formulario
+- Alejandro Vanegas: UI Designer y validación de formulario
 - Erika Uribe: UI Designer
 - Camilo Hollos: UI Designer
 
