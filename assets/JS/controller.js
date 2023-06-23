@@ -1,12 +1,12 @@
 let appointments = JSON.parse(Cookies?.get("appointments") || "[]") || [];
-let images = ["baño.jpeg", "farma.jpeg", "boquita.jpeg"]
+let images = ["baño.jpeg", "farma.jpeg", "boquita.jpeg"];
 
 // Highlight active page in menu
 
 const url_arr = document.URL.split('/');
 const route = url_arr[url_arr.length - 1];
 const routeName = route.split('.');
-const activeElement = document.getElementById(routeName[0]); 
+const activeElement = document.getElementById(routeName?.[0] || ""); 
 
 activeElement?.classList.add('active-menu-item');
 
@@ -81,6 +81,7 @@ const submitCallbackFn = (e) => {
             let indexOfAppointment = appointments.findIndex(el => el.userID == appointment.userID);
             appointments[indexOfAppointment] = appointment;
             window.location.search = "";
+            isEditing = false;
         } else {
             Swal.fire(
                 '¡Cita agendada!',
