@@ -6,7 +6,7 @@ let images = ["baño.jpeg", "farma.jpeg", "boquita.jpeg"]
 const url_arr = document.URL.split('/');
 const route = url_arr[url_arr.length - 1];
 const routeName = route.split('.');
-const activeElement = document.getElementById(routeName[0]); 
+const activeElement = document.getElementById(routeName?.[0] || ""); 
 
 activeElement?.classList.add('active-menu-item');
 
