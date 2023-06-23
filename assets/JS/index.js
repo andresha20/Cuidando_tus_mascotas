@@ -1,3 +1,6 @@
+let appointments1 = JSON.parse(Cookies?.get("appointments") || "[]") || [];
+let isEditing = false;
+
 const userName=document.getElementById("userName")
 const userLastName=document.getElementById("userLastName")
 const userEmail=document.getElementById("userEmail")
@@ -16,14 +19,30 @@ const invalidFeedbackDate=document.getElementById("invalidFeedbackDate")
 const invalidFeedbackHour=document.getElementById("invalidFeedbackHour")
 const invalidFeedbackService=document.getElementById("invalidFeedbackService")
 
-invalidFeedbackName.style.display="none"
-invalidFeedbackLastName.style.display="none"
-invalidFeedbackEmail.style.display="none"
-invalidFeedbackID.style.display="none"
-invalidFeedbackPhone.style.display="none"
-invalidFeedbackDate.style.display="none"
-invalidFeedbackHour.style.display="none"
-invalidFeedbackService.style.display="none"
+if (invalidFeedbackName) {
+    invalidFeedbackName.style.display="none"
+}
+if (invalidFeedbackLastName) {
+    invalidFeedbackLastName.style.display="none"
+}
+if (invalidFeedbackEmail) {
+    invalidFeedbackEmail.style.display="none"
+}
+if (invalidFeedbackID) {
+    invalidFeedbackID.style.display="none"
+}
+if (invalidFeedbackPhone) {
+    invalidFeedbackPhone.style.display="none"
+}
+if (invalidFeedbackDate) {
+    invalidFeedbackDate.style.display="none"
+}
+if (invalidFeedbackHour) {
+    invalidFeedbackHour.style.display="none"
+}
+if (invalidFeedbackService) {
+    invalidFeedbackService.style.display="none"
+}
 
 const btnSubmit=document.getElementById("btn_submit")
 var validName=false
@@ -78,8 +97,8 @@ function mostrar() {
             userEmail.classList.add('is-invalid')
             invalidFeedbackEmail.style.display="block"
         }
-
-        if(userID.value.length<1){
+        let indexOfID = appointments1.findIndex(el => el.userID == userID.value);
+        if(userID.value.length<5 || (!isEditing && indexOfID !== -1)){
             userID.classList.add('is-invalid')
             invalidFeedbackID.style.display="block"
         }
@@ -140,7 +159,7 @@ function mostrar() {
 
  
 
-btnSubmit.addEventListener('click',(event)=>{
+btnSubmit?.addEventListener('click',(event)=>{
     
     event.preventDefault()
     mostrar()
@@ -156,12 +175,18 @@ btnSubmit.addEventListener('click',(event)=>{
             // userHour.textContent=""
             // userService.textContent=""
             submitCallbackFn();
-            setTimeout(()=>{
-                location.reload()
-            },1000)
+            if (!isEditing) {
+                setTimeout(()=>{
+                    window.location = "appointments.html#appointments-container";
+                }, 1000)
+            }
         }
         else{
-            alert("Fill correctly all the input!")
+            Swal.fire(
+                'Campos vacíos o incorrectos',
+                'No puedes guardar citas con contenido vacío o erroneo.',
+                'error'
+            )
             mostrar()
         }
     },1000)
