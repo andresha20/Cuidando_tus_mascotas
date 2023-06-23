@@ -32,7 +32,7 @@ window.onload = () => {
             let editingText = document.createElement("h4");
             submitBtn.innerHTML= `Editar cita #${serviceId}`;
             editingText.textContent = `Editando documento #${appointments[indexOfAppointment]["userID"]}`;
-            editingText.classList.add("text-center", "mt-3")
+            editingText.classList.add("text-center", "mt-3");
             targetDiv.appendChild(editingText);
             Object.keys(appointments[indexOfAppointment]).map(key => {
                 document.getElementById(key).value = appointments[indexOfAppointment][key];
