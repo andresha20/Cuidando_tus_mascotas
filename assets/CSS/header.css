@@ -10,7 +10,7 @@
     top: 0;
     right: 0;
     left: 0;
-    z-index: 2;
+    z-index: 10;
 
 }
 
@@ -132,11 +132,6 @@
 }
 /* PARTE RESPONSIVE***************************************************************************** */
 @media only screen and (max-width:730px) {
-    h1{
-        color: white;
-        font-size: 2.4rem;
-        margin: 0 auto;
-    }
     .banner-text {
         font-size: 2rem;
     }
@@ -163,10 +158,4 @@
             margin-top: 20vh;
 
     }
-    h1{
-        color: white;
-        font-size: 2rem;
-        margin: 0 auto;
-    }
-
 }
