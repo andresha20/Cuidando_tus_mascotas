@@ -3,17 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naricitas Felices</title>
-    <link rel="stylesheet" href="assets/CSS/styles.css">
+    <title>Citas | Naricitas Felices</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/CSS/styles.css">
+    <link rel="stylesheet" href="./assets/CSS/comments.css">
+    <link rel="stylesheet" href="./assets/CSS/header.css">
+    <link rel="stylesheet" href="./assets/CSS/footer.css">
 
 </head>
 <body>
-    <section class="container">
-       <div id="appointments-container">
-
-       </div>
-    </section>
+    <header>
+      <nav>
+        <section class="nabvarstyle">
+          <div class=" stylelogo" >
+            <a href="index.html">
+              <img class="logo" width="10px" height="10px" src="./assets/IMG/logo.png" alt="logo">
+            </a>
+          </div>
+          <div class="navbartext-container">
+            <div class="navbartex">
+              <a class="navbartex-item" id="index" href="index.html">Inicio</a> 
+              <a class="navbartex-item" id="appointments" href="appointments.html">Citas</a>
+              <a class="navbartex-item" id="index" href="">Nosotros</a>
+            </div>
+          </div>
+        </section>
+      </nav>
+      <section class="banner fw-bold text-center">
+        <section class="position-banner banner-text">
+          <p>Citas <b>AGENDADAS</b></p>
+        </section>
+      </section>
+    </header>
+    <main class="main-appointments">
+      <section class="container">
+         <div id="appointments-container">
+  
+         </div>
+      </section>
+    </main>
+    <footer>
+      <section class="footer p-5">
+        <div class="logo_text">
+          <div class="me-3">
+            <img class="logo" src="/assets/IMG/logo.png" alt="logo">
+          </div>
+          <div>
+            <h4 class="text_h4">NARICITAS</h4>
+            <h4 class="text_h4">FELICES</h4>
+          </div>          
+        </div>
+        <div class="icons">
+          <a href="https://www.facebook.com/profile.php?id=100093536817180"><img src="/assets/IMG/faceboock.svg" alt="Faceboock"></a>
+          <a href="https://www.instagram.com/narifeliz/"><img src="/assets/IMG/instagram.svg" alt="Instagram"></a>
+          <a href="https://github.com/DilbaniE/Cuidando_tus_mascotas"><img src="/assets/IMG/git.svg" alt="GitHub"></a>
+          <a href="https://chat.whatsapp.com/IpKDjKlqQe0Bq4guV36v2X"><img src="/assets/IMG/whats.svg" alt="whast"></a>
+          <a href="https://www.youtube.com/watch?v=TbgB5zH8_3E"><img src="/assets/IMG/youtuve.svg" alt="youtuve"></a>
+        </div>
+        <div class="lista_texto">
+          <h4>Miembros</h4>
+          <ul>
+            <li>Dilbani Enriquez</li>
+            <li>Erika Uribe</li>
+            <li>Alejando magno</li>
+            <li>Andrés Henao</li>
+            <li>Camilo Hollos</li>
+          </ul>
+        </div>
+      </section>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./assets/JS/index.js"></script>

@@ -1,8 +1,21 @@
 let appointments = [];
 let isEditing = false;
 
+// Highlight active page in menu
+
+const url_arr = document.URL.split('/');
+const route = url_arr[url_arr.length - 1];
+const routeName = route.split('.');
+const activeElement = document.getElementById(routeName[0]); 
+
+activeElement?.classList.add('active-menu-item');
+
+// Ends
+
 const fields = ["userName", "userLastName", "userEmail", "userPhone", "userID", "userDate", "userHour", "userService"];
 appointments = JSON.parse(Cookies?.get("appointments") || "[]") || [];
+
+// Check if the user is editing
 
 window.onload = () => {
     const queryString = window.location.search;
@@ -23,6 +36,8 @@ window.onload = () => {
     }
 }
 
+// Edit the object
+
 const editData = (field, appointment) => {
     let fieldValue = document.getElementById(field)?.value || "";
     if (fieldValue.length == 0) return null;
@@ -30,6 +45,8 @@ const editData = (field, appointment) => {
     document.getElementById(field).value = "";
     return appointment;
 }
+
+// Trigger after submit
 
 const submitCallbackFn = (e) => {
     let appointment = {};
@@ -68,6 +85,8 @@ const submitCallbackFn = (e) => {
     }
 }
 
+// Handle button-press
+
 const handleSubmit = (e) => {
     switch (e.target.id) {
         case "editButton":
@@ -91,10 +110,13 @@ const handleSubmit = (e) => {
                         'Cita eliminada satisfactoriamente.',
                         'success'
                         );
+                        let indexOfAppointment = appointments.findIndex(el => el.userID == serviceId);
+                        appointments.splice(indexOfAppointment, 1);
+                        Cookies.set("appointments", JSON.stringify(appointments), { expires: 365 })
+                        getAppointments();
                     }
                 )
-                let indexOfAppointment = appointments.findIndex(el => el.userID == serviceId);
-                appointments.splice(indexOfAppointment, 1);
+                
             }
             break;
 
@@ -106,8 +128,6 @@ const handleSubmit = (e) => {
 window.addEventListener("click", handleSubmit);
 
 // DRAW LIST OF APPOINBTMENTS
-
-let appointmentsContainer = document.getElementById("appointments-container");
 
 const getHourLabel = (value) => {
     let label = "7:15 am";
@@ -154,11 +174,15 @@ const getServiceLabel = (value) => {
     return label;
 }
 
+let appointmentsContainer = document.getElementById("appointments-container");
+
 const getAppointments = () => {
+    console.log('ran')
     let cookieExists = Cookies.get("appointments");
     if (cookieExists) {
         appointments = JSON.parse(cookieExists);
     }
+    appointmentsContainer.innerHTML = "";
     appointments.map((appointment, i) => {
         let appointmentDiv = document.createElement("div");
         appointmentDiv.setAttribute("id", appointment?.userID);

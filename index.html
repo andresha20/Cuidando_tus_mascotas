@@ -8,205 +8,214 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/CSS/styles.css">
-    <link rel="stylesheet" href="/assets/CSS/comments.css">
-    <link rel="stylesheet" href="assets/CSS/header.css">
-    <link rel="stylesheet" href="/assets/CSS/footer.css">
-    <title>Naricitas Felices</title>
+    <link rel="stylesheet" href="./assets/CSS/styles.css">
+    <link rel="stylesheet" href="./assets/CSS/comments.css">
+    <link rel="stylesheet" href="./assets/CSS/header.css">
+    <link rel="stylesheet" href="./assets/CSS/footer.css">
+    <title>Inicio | Naricitas Felices</title>
 </head>
 <body>
   <header>
     <nav>
       <section class="nabvarstyle">
         <div class=" stylelogo" >
-            <img class="logo1" src="/assets/IMG/logo.png" alt="logo">
+          <a href="index.html">
+            <img class="logo" width="10px" height="10px" src="./assets/IMG/logo.png" alt="logo">
+          </a>
         </div>
-        <div class="navbartex">
-          <a href=""><h3 class="navbartex__inicio">Inicio</h3> </a> 
-          <a href=""><h3>Servicios</h3> </a>
-          <a href=""><h3 class="navbartex__nosotros">Nosotros</h3></a>
+        <div class="navbartext-container">
+          <div class="navbartex">
+            <a class="navbartex-item" id="index" href="index.html">Inicio</a> 
+            <a class="navbartex-item" id="appointments" href="appointments.html">Citas</a>
+            <a class="navbartex-item" id="index" href="">Nosotros</a>
+          </div>
         </div>
-    </section>
+      </section>
     </nav>
     <section class="banner fw-bold text-center">
-      <section class="position-banner">
-        <h1>Brindamos <span>felicidad</span> a</h1>
-        <h1>la vida de tus</h1>
-        <h1>Mascotas!</h1>
+      <section class="position-banner banner-text">
+        <p>¡Brindamos <b>FELICIDAD</b> a</p>
+        <p>la vida de tus</p>
+        <p>Mascotas!</p>
       </section>
     </section>
   </header>
-  <section  id="main-container h-100">
-    <h1 class="bg-custom">Nuestros servicios</h1>
-    <div class="row row-cols-1 row-cols-md-3 g-4 m-4">
-      <div class="col">
-        <div class="card justify-content-between">
-          <img src="/assets/IMG/baño.jpeg" class="card-img-top img-fluid p-2" alt="...">
-          <div class="card-body d-flex flex-column justify-content-evenly height">
-            <h2 class="card-title text-center">Peluqueria</h2>
-            <p class="card-text">Transforma a tu mascota en una estrella con nuestros servicios de peluquería y corte de uñas, brindándoles el cuidado y estilo que se merecen.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card justify-content-around">
-          <img src="/assets/IMG/farma.jpeg" class="card-img-top img-fluid p-2" alt="...">
-          <div class="card-body d-flex flex-column justify-content-evenly height">
-            <h2 class="card-title text-center">Servicio Farmacéutico</h2>
-            <p class="card-text">Ofrecemos atención farmacéutica especializada para mascotas, garantizando su bienestar y calidad de vida en cada dosis.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card justify-content-around">
-          <img src="/assets/IMG/boquita.jpeg" class="card-img-top img-fluid p-2" alt="...">
-          <div class="card-body d-flex flex-column justify-content-evenly height">
-            <h2 class="card-title text-center">Guarderia</h2>
-            <p class="card-text">Guardería de mascotas: amor, cuidado y diversión para tus peludos amigos. Un hogar lejos de casa.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-</section>
-<h1 class="bg-custom">Contactanos</h1>
-    <section class="container">
-      
-        <div class="row  " id="form">
-            <div class="col-12 col-md-12 col-lg-6 p-4 bg-custom_1">
-                <form class="row g-3 needs-validation" novalidate>
-                    <div class="col-md-12 col-lg-6">
-                      <label for="validationCustom01" class="form-label">Nombres</label>
-                      <input type="text" class="form-control" id="userName" placeholder="Alejandro..." required>
-                      <div id="invalidFeedbackName">
-                        Write your name!
-                      </div>
-                    </div>
-                    <div class="col-md-12 col-lg-6">
-                      <label for="validationCustom02" class="form-label">Apellidos</label>
-                      <input type="text" class="form-control" id="userLastName" placeholder="Naranjo..." required>
-                      <div id="invalidFeedbackLastName">
-                        Write your last name!
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <label for="validationCustomUsername" class="form-label">Email</label>
-                      <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="email" class="form-control" id="userEmail" aria-describedby="inputGroupPrepend" placeholder="********@****.***" required>
-                        <div id="invalidFeedbackEmail" class="col-md-12">
-                            Please write a valid email.
-                        </div>
-                      </div>
-                      
-                    </div>
-                    <div class="col-md-12 col-lg-6">
-                      <label for="validationCustom03" class="form-label">Documento</label>
-                      <input type="number" class="form-control" id="userID" placeholder="Identificacion" required>
-                      <div id="invalidFeedbackID">
-                        Please provide a valid ID.
-                      </div>
-                    </div>
-                    <div class="col-md-12 col-lg-6">
-                        <label for="validationCustom03" class="form-label">Celular</label>
-                        <input type="number" class="form-control" id="userPhone" placeholder="Numero celular" required>
-                        <div id="invalidFeedbackPhone">
-                          Please provide a valid Phone.
-                        </div>
-                      </div>
-                    <div class="col-md-12 col-lg-6">
-                        <label for="validationCustom03" class="form-label">Fecha</label>
-                        <input type="date" class="form-control" id="userDate" required>
-                        <div id="invalidFeedbackDate">
-                          Please select a date.
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-6">
-                      <label for="validationCustom05" class="form-label">Hora</label>
-                      <select class="form-select" id="userHour" required>
-                        <option selected disabled value="">Selecciona una hora...</option>
-                        <option value="1">7:15 am</option>
-                        <option value="2">8:15 am</option>
-                        <option value="3">9:15 am</option>
-                        <option value="4">10:15 am</option>
-                        <option value="5">11:15 am</option>
-                        <option value="6">12:15 am</option>
-                        <option value="7">13:15 am</option>
-                        <option value="8">14:15 am</option>
-                      </select>
-                      <div id="invalidFeedbackHour">
-                        Please select an hour.
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                        <label for="validationCustom04" class="form-label">Servicio</label>
-                        <select class="form-select" id="userService" required>
-                          <option selected disabled value="">Elige el servicio...</option>
-                          <option value="1">Limpieza total</option>
-                          <option value="2">Corte estiludo</option>
-                          <option value="3">Corte de puntica</option>
-                        </select>
-                        <div id="invalidFeedbackService">
-                          Please select a service.
-                        </div>
-                      </div>
-                    <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit" id="btn_submit">Agendar servicio</button>
-                    </div>
-                  </form>
+  <main>
+    <section  id="main-container h-100">
+      <h1 class="bg-custom">Nuestros servicios</h1>
+      <div class="row row-cols-1 row-cols-md-3 g-4 m-4">
+        <div class="col">
+          <div class="card justify-content-between">
+            <img src="/assets/IMG/baño.jpeg" class="card-img-top img-fluid p-2" alt="...">
+            <div class="card-body d-flex flex-column justify-content-evenly height">
+              <h2 class="card-title text-center">Peluqueria</h2>
+              <p class="card-text">Transforma a tu mascota en una estrella con nuestros servicios de peluquería y corte de uñas, brindándoles el cuidado y estilo que se merecen.</p>
             </div>
-            <div class="col-12 col-md-12 col-lg-6"></div>
-        </div>
-    </section>
-
-    <section class="comments">
-      <div class="row justify-content-center bordercomment">
-        <div>
-          <h5 class="text-center m-2">Erika Uribe</h5>
-        </div>
-        <div class="row imgcomment">
-          <div class="col-12 col-md-12 col-lg-6 text-center"> <img class="cat" src="/assets/IMG/cat.jpeg" alt="cat"></div>
-          <div class="col-12 col-md-12 col-lg-6 text-center p-2 stars"> 
-              <img src="/assets/IMG/strella.svg" alt="estrella">
-              <img src="/assets/IMG/strella.svg" alt="estrella">
-              <img src="/assets/IMG/strella.svg" alt="estrella">
-              <img src="/assets/IMG/strella.svg" alt="estrella">
-              <img src="/assets/IMG/strella.svg" alt="estrella">
           </div>
         </div>
-        <div class="comments-c">
-          <h6 class="text-center">Me encanto su servicio mi gatico 🐈 quedo divino, <br> ya quiero volver y llevar a mi tortuga 🐢.</h6>
+        <div class="col">
+          <div class="card justify-content-around">
+            <img src="/assets/IMG/farma.jpeg" class="card-img-top img-fluid p-2" alt="...">
+            <div class="card-body d-flex flex-column justify-content-evenly height">
+              <h2 class="card-title text-center">Servicio Farmacéutico</h2>
+              <p class="card-text">Ofrecemos atención farmacéutica especializada para mascotas, garantizando su bienestar y calidad de vida en cada dosis.</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <p class="text-center">23/06/2023</p>
+        <div class="col">
+          <div class="card justify-content-around">
+            <img src="/assets/IMG/boquita.jpeg" class="card-img-top img-fluid p-2" alt="...">
+            <div class="card-body d-flex flex-column justify-content-evenly height">
+              <h2 class="card-title text-center">Guarderia</h2>
+              <p class="card-text">Guardería de mascotas: amor, cuidado y diversión para tus peludos amigos. Un hogar lejos de casa.</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row justify-content-center bordercomment">
-        <div>
-          <h5 class="text-center m-2">Alejandro Magno</h5>
+  </section>
+  <h1 class="bg-custom">Contactanos</h1>
+      <section class="container p-5">
+          <div class="row flex-column-reverse flex-lg-row" id="form">
+              <div class="col-12 col-md-12 col-lg-6 p-4 bg-custom_1">
+                  <form class="row g-3 needs-validation" novalidate>
+                      <div class="col-md-12 col-lg-6">
+                        <label for="validationCustom01" class="form-label">Nombres</label>
+                        <input type="text" class="form-control" id="userName" placeholder="Alejandro..." required>
+                        <div id="invalidFeedbackName">
+                          Write your name!
+                        </div>
+                      </div>
+                      <div class="col-md-12 col-lg-6">
+                        <label for="validationCustom02" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="userLastName" placeholder="Naranjo..." required>
+                        <div id="invalidFeedbackLastName">
+                          Write your last name!
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <label for="validationCustomUsername" class="form-label">Email</label>
+                        <div class="input-group has-validation">
+                          <span class="input-group-text" id="inputGroupPrepend">@</span>
+                          <input type="email" class="form-control" id="userEmail" aria-describedby="inputGroupPrepend" placeholder="********@****.***" required>
+                          <div id="invalidFeedbackEmail" class="col-md-12">
+                              Please write a valid email.
+                          </div>
+                        </div>
+                        
+                      </div>
+                      <div class="col-md-12 col-lg-6">
+                        <label for="validationCustom03" class="form-label">Documento</label>
+                        <input type="number" class="form-control" id="userID" placeholder="Identificacion" required>
+                        <div id="invalidFeedbackID">
+                          Please provide a valid ID.
+                        </div>
+                      </div>
+                      <div class="col-md-12 col-lg-6">
+                          <label for="validationCustom03" class="form-label">Celular</label>
+                          <input type="number" class="form-control" id="userPhone" placeholder="Numero celular" required>
+                          <div id="invalidFeedbackPhone">
+                            Please provide a valid Phone.
+                          </div>
+                        </div>
+                      <div class="col-md-12 col-lg-6">
+                          <label for="validationCustom03" class="form-label">Fecha</label>
+                          <input type="date" class="form-control" id="userDate" required>
+                          <div id="invalidFeedbackDate">
+                            Please select a date.
+                          </div>
+                      </div>
+                      <div class="col-md-12 col-lg-6">
+                        <label for="validationCustom05" class="form-label">Hora</label>
+                        <select class="form-select" id="userHour" required>
+                          <option selected disabled value="">Selecciona una hora...</option>
+                          <option value="1">7:15 am</option>
+                          <option value="2">8:15 am</option>
+                          <option value="3">9:15 am</option>
+                          <option value="4">10:15 am</option>
+                          <option value="5">11:15 am</option>
+                          <option value="6">12:15 am</option>
+                          <option value="7">13:15 am</option>
+                          <option value="8">14:15 am</option>
+                        </select>
+                        <div id="invalidFeedbackHour">
+                          Please select an hour.
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                          <label for="validationCustom04" class="form-label">Servicio</label>
+                          <select class="form-select" id="userService" required>
+                            <option selected disabled value="">Elige el servicio...</option>
+                            <option value="1">Limpieza total</option>
+                            <option value="2">Corte estiludo</option>
+                            <option value="3">Corte de puntica</option>
+                          </select>
+                          <div id="invalidFeedbackService">
+                            Please select a service.
+                          </div>
+                        </div>
+                      <div class="col-12">
+                        <button class="btn btn-primary w-100" type="submit" id="btn_submit">Agendar servicio</button>
+                      </div>
+                    </form>
+              </div>
+              <div class="col-12 col-md-12 col-lg-6 p-5">
+                <h1>Envíanos tu solicitud</h1>
+                <p>Ponte en contacto con nuestra organización y recibe la llamada de un asesor lo más pronto posible.</p>
+                <img class="w-100 img-fluid" src="https://www.globalseller.app/wp-content/uploads/2020/09/MyDataSinc_Atencion_Cliente.jpg"/>
+              </div>
+          </div>
+      </section>
+  
+      <section class="comments">
+        <div class="row justify-content-center bordercomment">
+          <div>
+            <h5 class="text-center m-2">Erika Uribe</h5>
+          </div>
+          <div class="row imgcomment">
+            <div class="col-12 col-md-12 col-lg-6 text-center"> <img class="cat" src="/assets/IMG/cat.jpeg" alt="cat"></div>
+            <div class="col-12 col-md-12 col-lg-6 text-center p-2 stars"> 
+                <img src="/assets/IMG/strella.svg" alt="estrella">
+                <img src="/assets/IMG/strella.svg" alt="estrella">
+                <img src="/assets/IMG/strella.svg" alt="estrella">
+                <img src="/assets/IMG/strella.svg" alt="estrella">
+                <img src="/assets/IMG/strella.svg" alt="estrella">
+            </div>
+          </div>
+          <div class="comments-c">
+            <h6 class="text-center">Me encanto su servicio mi gatico 🐈 quedo divino, <br> ya quiero volver y llevar a mi tortuga 🐢.</h6>
+          </div>
+          <div>
+            <p class="text-center">23/06/2023</p>
+          </div>
         </div>
-        <div class="row imgcomment">
-          <div class="col-12 col-md-12 col-lg-6 text-center"> <img class="cat" src="/assets/IMG/dog.jpg" alt="dog"></div>
-          <div class="col-12 col-md-12 col-lg-6 text-center p-2 stars"> 
-              <img src="/assets/IMG/strella.svg" alt="estrella">
-              <img src="/assets/IMG/strella.svg" alt="estrella">
-              <img src="/assets/IMG/strella.svg" alt="estrella">
-              <img src="/assets/IMG/strella.svg" alt="estrella">
-              <img src="/assets/IMG/strella.svg" alt="estrella">
-        </div>
-        </div>
-        <div class="comments-c">
-          <h6 class="text-center">Me gustan sus servicios y la atencion 🐶 es inigualable,  <br> 100% recomiendo para sus canhijos🐾.</h6>
-        </div>
-        <div>
-          <p class="text-center">22/06/2023</p>
-        </div>
-      </div>        
-    </section>
+        <div class="row justify-content-center bordercomment">
+          <div>
+            <h5 class="text-center m-2">Alejandro Magno</h5>
+          </div>
+          <div class="row imgcomment">
+            <div class="col-12 col-md-12 col-lg-6 text-center"> <img class="cat" src="/assets/IMG/dog.jpg" alt="dog"></div>
+            <div class="col-12 col-md-12 col-lg-6 text-center p-2 stars"> 
+                <img src="/assets/IMG/strella.svg" alt="estrella">
+                <img src="/assets/IMG/strella.svg" alt="estrella">
+                <img src="/assets/IMG/strella.svg" alt="estrella">
+                <img src="/assets/IMG/strella.svg" alt="estrella">
+                <img src="/assets/IMG/strella.svg" alt="estrella">
+          </div>
+          </div>
+          <div class="comments-c">
+            <h6 class="text-center">Me gustan sus servicios y la atencion 🐶 es inigualable,  <br> 100% recomiendo para sus canhijos🐾.</h6>
+          </div>
+          <div>
+            <p class="text-center">22/06/2023</p>
+          </div>
+        </div>        
+      </section>
+  </main>
 
     <footer>
-      <section class="footer">
+      <section class="footer p-5">
         <div class="logo_text">
-          <div>
+          <div class="me-3">
             <img class="logo" src="/assets/IMG/logo.png" alt="logo">
           </div>
           <div>
@@ -222,7 +231,8 @@
           <a href="https://www.youtube.com/watch?v=TbgB5zH8_3E"><img src="/assets/IMG/youtuve.svg" alt="youtuve"></a>
         </div>
         <div class="lista_texto">
-          <ul>Equipo
+          <h4>Miembros</h4>
+          <ul>
             <li>Dilbani Enriquez</li>
             <li>Erika Uribe</li>
             <li>Alejando magno</li>
@@ -232,10 +242,6 @@
         </div>
       </section>
     </footer>
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./assets/JS/index.js"></script>
