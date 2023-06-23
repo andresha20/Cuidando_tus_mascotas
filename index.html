@@ -8,8 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/CSS/styles.css">
-    <link rel="stylesheet" href="./assets/CSS/header.css">
+    <link rel="stylesheet" href="assets/CSS/styles.css">
+    <link rel="stylesheet" href="/assets/CSS/comments.css">
+    <link rel="stylesheet" href="assets/CSS/header.css">
+    <link rel="stylesheet" href="/assets/CSS/footer.css">
     <title>Naricitas Felices</title>
 </head>
 <body>
@@ -28,19 +30,60 @@
         </div>
     </section>
     </nav>
+    <section class="banner fw-bold text-center">
+      <section class="position-banner">
+        <h1>Brindamos <span>felicidad</span> a</h1>
+        <h1>la vida de tus</h1>
+        <h1>Mascotas!</h1>
+      </section>
+    </section>
   </header>
+  <section  id="main-container h-100">
+    <h1 class="bg-custom">Nuestros servicios</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4 m-4">
+      <div class="col">
+        <div class="card justify-content-between">
+          <img src="/assets/IMG/baño.jpeg" class="card-img-top img-fluid p-2" alt="...">
+          <div class="card-body d-flex flex-column justify-content-evenly height">
+            <h2 class="card-title text-center">Peluqueria</h2>
+            <p class="card-text">Transforma a tu mascota en una estrella con nuestros servicios de peluquería y corte de uñas, brindándoles el cuidado y estilo que se merecen.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card justify-content-around">
+          <img src="/assets/IMG/farma.jpeg" class="card-img-top img-fluid p-2" alt="...">
+          <div class="card-body d-flex flex-column justify-content-evenly height">
+            <h2 class="card-title text-center">Servicio Farmacéutico</h2>
+            <p class="card-text">Ofrecemos atención farmacéutica especializada para mascotas, garantizando su bienestar y calidad de vida en cada dosis.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card justify-content-around">
+          <img src="/assets/IMG/boquita.jpeg" class="card-img-top img-fluid p-2" alt="...">
+          <div class="card-body d-flex flex-column justify-content-evenly height">
+            <h2 class="card-title text-center">Guarderia</h2>
+            <p class="card-text">Guardería de mascotas: amor, cuidado y diversión para tus peludos amigos. Un hogar lejos de casa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<h1 class="bg-custom">Contactanos</h1>
     <section class="container">
-        <div class="row m-1" id="form">
-            <div class="col-12 col-md-6 p-4">
+      
+        <div class="row  " id="form">
+            <div class="col-12 col-md-12 col-lg-6 p-4 bg-custom_1">
                 <form class="row g-3 needs-validation" novalidate>
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-lg-6">
                       <label for="validationCustom01" class="form-label">Nombres</label>
                       <input type="text" class="form-control" id="userName" placeholder="Alejandro..." required>
                       <div id="invalidFeedbackName">
                         Write your name!
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-lg-6">
                       <label for="validationCustom02" class="form-label">Apellidos</label>
                       <input type="text" class="form-control" id="userLastName" placeholder="Naranjo..." required>
                       <div id="invalidFeedbackLastName">
@@ -58,31 +101,31 @@
                       </div>
                       
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-lg-6">
                       <label for="validationCustom03" class="form-label">Documento</label>
-                      <input type="number" class="form-control" id="userID" placeholder="Identification" required>
+                      <input type="number" class="form-control" id="userID" placeholder="Identificacion" required>
                       <div id="invalidFeedbackID">
                         Please provide a valid ID.
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-lg-6">
                         <label for="validationCustom03" class="form-label">Celular</label>
-                        <input type="number" class="form-control" id="userPhone" placeholder="Phone Number" required>
+                        <input type="number" class="form-control" id="userPhone" placeholder="Numero celular" required>
                         <div id="invalidFeedbackPhone">
                           Please provide a valid Phone.
                         </div>
                       </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-lg-6">
                         <label for="validationCustom03" class="form-label">Fecha</label>
                         <input type="date" class="form-control" id="userDate" required>
                         <div id="invalidFeedbackDate">
                           Please select a date.
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12 col-lg-6">
                       <label for="validationCustom05" class="form-label">Hora</label>
                       <select class="form-select" id="userHour" required>
-                        <option selected disabled value="">Select an hour...</option>
+                        <option selected disabled value="">Selecciona una hora...</option>
                         <option value="1">7:15 am</option>
                         <option value="2">8:15 am</option>
                         <option value="3">9:15 am</option>
@@ -113,14 +156,88 @@
                     </div>
                   </form>
             </div>
-            <div class="col-12 col-md-6"></div>
+            <div class="col-12 col-md-12 col-lg-6"></div>
         </div>
     </section>
 
+    <section class="comments">
+      <div class="row justify-content-center bordercomment">
+        <div>
+          <h5 class="text-center m-2">Erika Uribe</h5>
+        </div>
+        <div class="row imgcomment">
+          <div class="col-12 col-md-12 col-lg-6 text-center"> <img class="cat" src="/assets/IMG/cat.jpeg" alt="cat"></div>
+          <div class="col-12 col-md-12 col-lg-6 text-center p-2 stars"> 
+              <img src="/assets/IMG/strella.svg" alt="estrella">
+              <img src="/assets/IMG/strella.svg" alt="estrella">
+              <img src="/assets/IMG/strella.svg" alt="estrella">
+              <img src="/assets/IMG/strella.svg" alt="estrella">
+              <img src="/assets/IMG/strella.svg" alt="estrella">
+          </div>
+        </div>
+        <div class="comments-c">
+          <h6 class="text-center">Me encanto su servicio mi gatico 🐈 quedo divino, <br> ya quiero volver y llevar a mi tortuga 🐢.</h6>
+        </div>
+        <div>
+          <p class="text-center">23/06/2023</p>
+        </div>
+      </div>
+      <div class="row justify-content-center bordercomment">
+        <div>
+          <h5 class="text-center m-2">Alejandro Magno</h5>
+        </div>
+        <div class="row imgcomment">
+          <div class="col-12 col-md-12 col-lg-6 text-center"> <img class="cat" src="/assets/IMG/dog.jpg" alt="dog"></div>
+          <div class="col-12 col-md-12 col-lg-6 text-center p-2 stars"> 
+              <img src="/assets/IMG/strella.svg" alt="estrella">
+              <img src="/assets/IMG/strella.svg" alt="estrella">
+              <img src="/assets/IMG/strella.svg" alt="estrella">
+              <img src="/assets/IMG/strella.svg" alt="estrella">
+              <img src="/assets/IMG/strella.svg" alt="estrella">
+        </div>
+        </div>
+        <div class="comments-c">
+          <h6 class="text-center">Me gustan sus servicios y la atencion 🐶 es inigualable,  <br> 100% recomiendo para sus canhijos🐾.</h6>
+        </div>
+        <div>
+          <p class="text-center">22/06/2023</p>
+        </div>
+      </div>        
+    </section>
+
+    <footer>
+      <section class="footer">
+        <div class="logo_text">
+          <div>
+            <img class="logo" src="/assets/IMG/logo.png" alt="logo">
+          </div>
+          <div>
+            <h4 class="text_h4">NARICITAS</h4>
+            <h4 class="text_h4">FELICES</h4>
+          </div>          
+        </div>
+        <div class="icons">
+          <a href="https://www.facebook.com/profile.php?id=100093536817180"><img src="/assets/IMG/faceboock.svg" alt="Faceboock"></a>
+          <a href="https://www.instagram.com/narifeliz/"><img src="/assets/IMG/instagram.svg" alt="Instagram"></a>
+          <a href="https://github.com/DilbaniE/Cuidando_tus_mascotas"><img src="/assets/IMG/git.svg" alt="GitHub"></a>
+          <a href="https://chat.whatsapp.com/IpKDjKlqQe0Bq4guV36v2X"><img src="/assets/IMG/whats.svg" alt="whast"></a>
+          <a href="https://www.youtube.com/watch?v=TbgB5zH8_3E"><img src="/assets/IMG/youtuve.svg" alt="youtuve"></a>
+        </div>
+        <div class="lista_texto">
+          <ul>Equipo
+            <li>Dilbani Enriquez</li>
+            <li>Erika Uribe</li>
+            <li>Alejando magno</li>
+            <li>Andrés Henao</li>
+            <li>Camilo Hollos</li>
+          </ul>
+        </div>
+      </section>
+    </footer>
 
 
 
-    
+
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./assets/JS/index.js"></script>

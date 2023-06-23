@@ -15,7 +15,7 @@
 
 }
 
-.logo{
+.logo1{
     width: 60px;
     height: 60px;
     margin-right: 40px;
@@ -39,6 +39,46 @@
     font-size: 30px;
     transition: 1s all;
 }
+.banner{
+    background-image: url("https://img.freepik.com/vector-premium/concepto-banner-horizontal-clinica-veterinaria_96318-1241.jpg?w=2000");
+    padding: 25%;
+    background-size: contain;
+    background-position: top center;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+    height: 15rem;
+}
+
+.banner::after{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+    z-index: -1;
+
+}
+
+.position-banner {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+
+h1{
+    color: white;
+    font-size: 3.5rem;
+    margin: 0 auto;
+}
+
+h1>span {
+    color: #A35B33;
+}
 /* PARTE RESPONSIVE***************************************************************************** */
 @media only screen and (max-width:800px) {
     .navbartex{
@@ -48,14 +88,30 @@
 /* PARTE RESPONSIVE***************************************************************************** */
 @media only screen and (max-width:730px) {
     /*imagen*/
-    .logo{
+    .logo1{
         margin-right: 25px;
+    }
+
+    h1{
+        color: white;
+        font-size: 2.4rem;
+        margin: 0 auto;
     }
 }
 /* PARTE RESPONSIVE***************************************************************************** */
 @media only screen and (max-width:500px) {
+    .logo1{
+        width: 25%;
+        height: 20%;
+    }
     .navbartex h3{
         font-size: 18px;
+    }
+
+    h1{
+        color: white;
+        font-size: 2rem;
+        margin: 0 auto;
     }
 
 }

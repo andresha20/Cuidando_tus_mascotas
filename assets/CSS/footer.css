@@ -1,0 +1,69 @@
+/* estilos del footer*/
+.footer{
+    background: #181818;
+    color: #F7F5F5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+}
+.logo_text{
+    width: 12%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 25%;
+}
+
+/* PARTE RESPONSIVE***************************************************************************** */
+@media only screen and (max-width:730px) {
+    /*imagen*/
+    .logo{
+        width: 90%;
+        height: 90%;
+    }
+    .text_h4{
+        font-size: 15px;
+    }
+    .icons{
+        width: 40%;
+    }
+    .icons a img{
+        width: 29px;
+        }
+
+    .lista_texto li{
+        font-size: 15px;
+    }
+}
+/* PARTE RESPONSIVE***************************************************************************** */
+@media only screen and (max-width:500px) {
+    .logo{
+        width: 90%;
+        height: 90%;
+    }
+    .text_h4{
+        font-size: 10px;
+    }
+    .icons{
+        width: 30%;
+    }
+    .icons a img{
+        width: 19px;
+        }
+
+    .lista_texto li{
+        font-size: 10px;
+    }
+
+}

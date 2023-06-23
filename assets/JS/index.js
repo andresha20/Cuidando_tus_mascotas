@@ -26,14 +26,14 @@ invalidFeedbackHour.style.display="none"
 invalidFeedbackService.style.display="none"
 
 const btnSubmit=document.getElementById("btn_submit")
-let validName=false
-let validLastName=false
-let validEmail=false
-let validID=false
-let validPhone=false
-let validDate=false
-let validHour=false
-let validService=false
+var validName=false
+var validLastName=false
+var validEmail=false
+var validID=false
+var validPhone=false
+var validDate=false
+var validHour=false
+var validService=false
 
 var constantValidate
 
@@ -141,24 +141,28 @@ function mostrar() {
  
 
 btnSubmit.addEventListener('click',(event)=>{
+    
     event.preventDefault()
     mostrar()
-
-    if(validName===true && validLastName===true && validEmail===true && validID===true && validPhone===true && validDate===true && validHour===true && validService===true){
-        clearInterval(constantValidate)
-        // userName.textContent=""
-        // userLastName.textContent=""
-        // userEmail.textContent=""
-        // userID.textContent=""
-        // userPhone.textContent=""
-        // userDate.textContent=""
-        // userHour.textContent=""
-        // userService.textContent=""
-        submitCallbackFn();
-        return location.reload()
-    }
-    else{
-        alert("Fill correctly all the input!")
-        mostrar()
-    }
+    setTimeout(()=>{
+        if(validName===true && validLastName===true && validEmail===true && validID===true && validPhone===true && validDate===true && validHour===true && validService===true){
+            clearInterval(constantValidate)
+            // userName.textContent=""
+            // userLastName.textContent=""
+            // userEmail.textContent=""
+            // userID.textContent=""
+            // userPhone.textContent=""
+            // userDate.textContent=""
+            // userHour.textContent=""
+            // userService.textContent=""
+            submitCallbackFn();
+            setTimeout(()=>{
+                location.reload()
+            },1000)
+        }
+        else{
+            alert("Fill correctly all the input!")
+            mostrar()
+        }
+    },1000)
 })

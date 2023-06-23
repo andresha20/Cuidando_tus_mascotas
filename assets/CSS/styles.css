@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.card {
+    background-color:  #F7F5F5;
+    height: 35rem;
+}
+
+.card > img{
+    object-fit: contain;
+    height: 25rem;
+}
+.bg-custom{
+    background-color:  #F7F5F5;
+    text-align: center;
+    color: #A35B33;
+    font-size: 2.5rem;
+    padding: 1rem;
+}
+
+.bg-custom_1{
+    background-color: #F7F5F5;
+}
