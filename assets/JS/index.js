@@ -142,7 +142,7 @@ function mostrar() {
 
 btnSubmit.addEventListener('click',(event)=>{
     event.preventDefault()
-    
+    mostrar()
 
     if(validName===true && validLastName===true && validEmail===true && validID===true && validPhone===true && validDate===true && validHour===true && validService===true){
         clearInterval(constantValidate)
