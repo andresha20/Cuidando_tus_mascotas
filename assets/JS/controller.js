@@ -81,6 +81,7 @@ const submitCallbackFn = (e) => {
             let indexOfAppointment = appointments.findIndex(el => el.userID == appointment.userID);
             appointments[indexOfAppointment] = appointment;
             window.location.search = "";
+            isEditing = false;
         } else {
             Swal.fire(
                 '¡Cita agendada!',
