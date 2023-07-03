@@ -61,6 +61,7 @@ function mostrar() {
         if(userName.value.length<10){
             userName.classList.add('is-invalid')
             invalidFeedbackName.style.display="block"
+            validName=false
         }
         else{
             userName.classList.remove('is-invalid')
@@ -73,6 +74,7 @@ function mostrar() {
         if(userLastName.value.length<10){
             userLastName.classList.add('is-invalid')
             invalidFeedbackLastName.style.display="block"
+            validLastName=false
         }
         else{
             userLastName.classList.remove('is-invalid')
@@ -82,7 +84,7 @@ function mostrar() {
         }
 
         if(userEmail.value.length>1){
-            if(userEmail.value.includes("@") && (userEmail.value.includes(".com") || userEmail.value.includes(".co") || userEmail.value.includes(".net") || userEmail.value.includes(".gg"))){
+            if(userEmail.value.includes("@") && ((userEmail.value.includes(".com") || userEmail.value.includes(".co") || userEmail.value.includes(".net") || userEmail.value.includes(".gg")))){
                 userEmail.classList.remove('is-invalid')
                 userEmail.classList.add('is-valid')
                 invalidFeedbackEmail.style.display="none"
@@ -91,16 +93,19 @@ function mostrar() {
             else{
                 userEmail.classList.add('is-invalid')
                 invalidFeedbackEmail.style.display="block"
+                validEmail=false
             }
         }
         else{
             userEmail.classList.add('is-invalid')
             invalidFeedbackEmail.style.display="block"
+            validEmail=false
         }
         let indexOfID = appointments1.findIndex(el => el.userID == userID.value);
         if(userID.value.length<5 || (!isEditing && indexOfID !== -1)){
             userID.classList.add('is-invalid')
             invalidFeedbackID.style.display="block"
+            validID=false
         }
         else{
             userID.classList.remove('is-invalid')
@@ -112,6 +117,7 @@ function mostrar() {
         if(userPhone.value.length<1){
             userPhone.classList.add('is-invalid')
             invalidFeedbackPhone.style.display="block"
+            validPhone=false
         }
         else{
             userPhone.classList.remove('is-invalid')
@@ -123,6 +129,7 @@ function mostrar() {
         if(userDate.value.length<1){
             userDate.classList.add('is-invalid')
             invalidFeedbackDate.style.display="block"
+            validDate=false
         }
         else{
             userDate.classList.remove('is-invalid')
@@ -134,6 +141,7 @@ function mostrar() {
         if(userHour.value.length<1){
             userHour.classList.add('is-invalid')
             invalidFeedbackHour.style.display="block"
+            validHour=false
         }
         else{
             userHour.classList.remove('is-invalid')
@@ -145,6 +153,7 @@ function mostrar() {
         if(userService.value.length<1){
             userService.classList.add('is-invalid')
             invalidFeedbackService.style.display="block"
+            validService=false
         }
         else{
             userService.classList.remove('is-invalid')
